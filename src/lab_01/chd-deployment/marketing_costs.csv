@@ -1,0 +1,41 @@
+cost_id,channel,product_type,cost_per_lead
+8fa195f4-5580-493f-9ba9-cb4bb96983f3,Social Media,Personal Loan,364.17
+88bf73ae-1c6a-428a-bae1-3e02640951d5,Social Media,Auto Loan,291.24
+3343c240-4e45-4eff-9f91-432792f7a0dc,Social Media,Home Loan,189.29
+325293fd-1781-4d14-8d60-db322ce671fa,Social Media,Credit Card,416.21
+f568cefc-3915-40eb-b0ea-33fdcf443bc1,Social Media,Business Loan,358.13
+358860e1-5240-45fd-88f2-9ed431affbaa,Social Media,Student Loan,123.18
+d170919e-cabd-4f09-ae41-a1bed704640f,Social Media,Debt Consolidation Loan,459.92
+10f54baf-ac05-43c9-b5b1-b54fa2b0bdec,Social Media,Home Equity Loan,420.14
+5344e0e8-e13d-4ca0-bdd4-920c9d198c80,Email,Personal Loan,477.41
+d8d1e7ae-564b-410c-8e37-3cd535d7a6a9,Email,Auto Loan,376.57
+4032bc76-9e63-471a-a9e5-7a51322fbd50,Email,Home Loan,326.04
+18ff98f7-db9a-4f0f-afbd-55aff3577cde,Email,Credit Card,238.21
+25d218f3-4ea2-4451-8358-7d6ef81f9f50,Email,Business Loan,469.73
+f18306bb-b1b0-4d79-8de0-2bd2fcb462e7,Email,Student Loan,439.73
+e162bc58-e465-4522-a7dd-99941dbd48ad,Email,Debt Consolidation Loan,70.35
+3ef2075a-15d1-422c-83a2-eba65aa21fba,Email,Home Equity Loan,61.87
+6b3fedb4-7b0d-4de1-a8ff-75c0b32ada9b,Search,Personal Loan,219.41
+05d1a7ab-cc60-4024-858f-719d2c6ff896,Search,Auto Loan,414.75
+d6f56fef-278f-4ddb-9de5-e8c76f3d35fa,Search,Home Loan,494.27
+76d03f59-43b2-4d9a-8645-7f358e0fc1f2,Search,Credit Card,117.69
+b445c18d-ab7d-42bb-b82b-fd684fe4f2f8,Search,Business Loan,317.36
+e38484d1-6a8a-4b8e-9084-9c59621e1f8d,Search,Student Loan,221.4
+5f47bbc3-c941-4d2f-9686-596852dae923,Search,Debt Consolidation Loan,486.46
+0f19ef19-b724-422f-96d6-c980bb4e8b47,Search,Home Equity Loan,428.95
+6e9fe1d4-861b-44a2-ab07-26f5c135424a,Display,Personal Loan,427.25
+fa9086f2-2d2c-4c52-bed9-5370dfd3137a,Display,Auto Loan,260.91
+81b2e220-933d-48d2-ad5c-21cef2253ebb,Display,Home Loan,236.67
+e0d24a58-bf95-42b2-983f-e288acadb2f6,Display,Credit Card,173.03
+9d8b8c97-6502-4495-8a02-6a019a5b50d1,Display,Business Loan,75.37
+385f9f8a-8c04-40cf-9d0a-8e4a97057297,Display,Student Loan,439.13
+fc20c3ce-aab4-42c7-9408-a586f4527c34,Display,Debt Consolidation Loan,415.81
+d0b1243e-b0ea-4a81-8aee-bb670fcbef5e,Display,Home Equity Loan,499.87
+5366d279-2bd9-43be-a3e1-07b576cc47bc,Partner,Personal Loan,498.49
+8092c965-45cd-45d3-880d-4476fffb28b4,Partner,Auto Loan,299.94
+d4b58cdd-da56-43d1-81e9-ac024bd0396c,Partner,Home Loan,396.04
+0e7193b4-2b98-4cc5-85b4-8a6fc7bcc2e6,Partner,Credit Card,475.14
+c80016e7-9283-4f6a-acd2-c4af3bffbc54,Partner,Business Loan,432.34
+5ff3024c-9045-4e5c-94cb-5473c2e03e35,Partner,Student Loan,161.31
+b09643e0-13a2-4f32-bbd0-8d4fcf5384b8,Partner,Debt Consolidation Loan,252.74
+9f6d97da-7c53-4b06-828b-fedfb20b678c,Partner,Home Equity Loan,108.12
