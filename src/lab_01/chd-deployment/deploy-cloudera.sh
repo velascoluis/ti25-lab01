@@ -19,6 +19,8 @@ gcloud services enable bigquery.googleapis.com
 gcloud services enable iam.googleapis.com
 gcloud services enable documentai.googleapis.com
 gcloud services enable cloudaicompanion.googleapis.com
+gcloud services enable datalineage.googleapis.com
+gcloud services enable datacatalog.googleapis.com
 
 
 INSTANCE_NAME="gce-cdh-5-single-node"
@@ -97,10 +99,16 @@ if ! gcloud compute networks subnets describe $SUBNET \
         --project=$PROJECT_ID \
         --network=$NETWORK \
         --region=$REGION \
-        --range=10.0.0.0/24
+        --range=10.0.0.0/24 \
+        --enable-private-ip-google-access
     echo "Subnet created successfully"
 else
-    echo "Subnet already exists"
+    # Enable PGA on existing subnet
+    gcloud compute networks subnets update $SUBNET \
+        --project=$PROJECT_ID \
+        --region=$REGION \
+        --enable-private-ip-google-access
+    echo "Subnet already exists - enabled Private Google Access"
 fi
 
 # Create firewall rules
@@ -231,7 +239,7 @@ echo "Granting permissions to BigLake service account..."
 echo "Removing existing IAM bindings for BigLake service account..."
 gcloud projects remove-iam-policy-binding ${PROJECT_ID} \
     --member="serviceAccount:${BIGLAKE_SA}" \
-    --role="roles/storage.objectViewer" \
+    --role="roles/storage.admin" \
     --all &>/dev/null || true
 
 gcloud projects remove-iam-policy-binding ${PROJECT_ID} \
@@ -243,7 +251,7 @@ gcloud projects remove-iam-policy-binding ${PROJECT_ID} \
 echo "Adding new IAM bindings..."
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
     --member="serviceAccount:${BIGLAKE_SA}" \
-    --role="roles/storage.objectViewer" \
+    --role="roles/storage.admin" \
     --condition=None
 
 gcloud projects add-iam-policy-binding ${PROJECT_ID} \
