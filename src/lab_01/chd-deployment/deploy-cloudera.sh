@@ -11,6 +11,7 @@ if [ -z "$PROJECT_ID" ] || [ -z "$REGION" ] || [ -z "$ZONE" ]; then
 fi
 
 
+
 gcloud services enable orgpolicy.googleapis.com
 gcloud services enable bigqueryconnection.googleapis.com
 gcloud services enable notebooks.googleapis.com
@@ -236,7 +237,15 @@ fi
 # Create BigLake connection if it doesn't exist
 echo "Creating/checking BigLake connection..."
 BIGLAKE_CONN_NAME="biglake-connection"
-BQ_LOCATION="us"  # BigQuery location
+
+if [[ "$REGION" == us* ]]; then
+    BQ_LOCATION="US"  
+elif [[ "$REGION" == europe* ]]; then
+    BQ_LOCATION="EU" 
+else
+    echo "Error: Unsupported region for BigQuery location"
+    exit 1
+fi
 
 if ! bq show --connection ${PROJECT_ID}.${BQ_LOCATION}.${BIGLAKE_CONN_NAME} &>/dev/null; then
     bq mk --connection \
