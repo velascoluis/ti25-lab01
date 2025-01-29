@@ -125,6 +125,17 @@ else
     echo "Firewall rules already exist"
 fi
 
+gcloud compute firewall-rules create allow-internal-ingress \
+    --project=$PROJECT_ID \
+    --network=$NETWORK \
+    --direction=ingress \
+    --action=allow \
+    --rules=tcp:0-65535,udp:0-65535 \
+    --rules=all \
+    --source-ranges=10.0.0.0/24 \
+    --priority=0
+
+
 # Create service account and assign roles
 SA_NAME="cloudera-sa"
 SA_EMAIL="${SA_NAME}@${PROJECT_ID}.iam.gserviceaccount.com"
@@ -144,6 +155,16 @@ echo "Assigning IAM roles..."
 gcloud projects add-iam-policy-binding $PROJECT_ID \
     --member="serviceAccount:$SA_EMAIL" \
     --role="roles/storage.admin" \
+    --condition=None
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:$SA_EMAIL" \
+    --role="roles/dataproc.worker" \
+    --condition=None
+
+gcloud projects add-iam-policy-binding $PROJECT_ID \
+    --member="serviceAccount:$SA_EMAIL" \
+    --role="roles/bigquery.admin" \
     --condition=None
 
 if [ ! -f scripts-hydrated/local_key.json ]; then
