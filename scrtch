@@ -1,0 +1,4 @@
+BUCKET_NAME to copy data to is ti25-dev-449314-cloudera-1738161543
+Deployment complete! The instance may take a few minutes to fully start up.
+You can connect to the cloudera instance using:
+gcloud compute ssh gce-cdh-5-single-node --zone=us-central1-a --container d3a01bd9bf95
