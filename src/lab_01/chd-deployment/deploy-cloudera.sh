@@ -40,6 +40,7 @@ for cmd in bq jq; do
 done
 
 # Create scripts and config directories
+rm -rf scripts-hydrated
 mkdir -p scripts-hydrated
 cp *.csv scripts-hydrated/
 cp *.py scripts-hydrated/
