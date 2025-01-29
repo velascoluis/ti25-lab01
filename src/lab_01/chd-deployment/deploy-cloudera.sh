@@ -40,7 +40,10 @@ for cmd in bq jq; do
 done
 
 # Create scripts and config directories
-rm -rf scripts-hydrated
+if [ -d "scripts-hydrated" ]; then
+    rm -rf scripts-hydrated
+    echo "Removed existing scripts-hydrated directory"
+fi
 mkdir -p scripts-hydrated
 cp *.csv scripts-hydrated/
 cp *.py scripts-hydrated/
