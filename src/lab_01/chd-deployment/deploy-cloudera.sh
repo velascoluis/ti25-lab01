@@ -315,6 +315,11 @@ if ! gcloud compute instances describe $INSTANCE_NAME --project=$PROJECT_ID --zo
         --container-tty \
         --container-restart-policy=always \
         --container-command="/usr/bin/docker-quickstart" \
+        --container-arg="--publish=7180:7180" \
+        --container-arg="--publish=8888:8888" \
+        --container-arg="--publish=80:80" \
+        --container-arg="--publish=50070:50070" \
+        --container-arg="--publish=8088:8088" \
         --tags=gce-firewall
 else
     echo "Instance exists, updating container configuration..."
@@ -332,7 +337,12 @@ else
         --container-stdin \
         --container-tty \
         --container-restart-policy=always \
-        --container-command="/usr/bin/docker-quickstart"
+        --container-command="/usr/bin/docker-quickstart" \
+        --container-arg="--publish=7180:7180" \
+        --container-arg="--publish=8888:8888" \
+        --container-arg="--publish=80:80" \
+        --container-arg="--publish=50070:50070" \
+        --container-arg="--publish=8088:8088"
     
     gcloud compute instances start $INSTANCE_NAME \
         --project=$PROJECT_ID \
